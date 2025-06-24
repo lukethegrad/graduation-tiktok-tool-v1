@@ -31,3 +31,6 @@ if url:
                 st.error(f"❌ Error: {e}")
     else:
         st.error("Invalid TikTok sound link.")
+
+st.write("Extracted ID:", sound_id)
+
