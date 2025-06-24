@@ -1,4 +1,3 @@
-
 from playwright.sync_api import sync_playwright
 
 def scrape_tiktok_sound(url: str):
@@ -9,7 +8,12 @@ def scrape_tiktok_sound(url: str):
         )
         page = context.new_page()
         page.goto(url, timeout=60000)
-        page.wait_for_timeout(5000)
+
+        # Wait longer for full load
+        page.wait_for_timeout(8000)
+
+        # 🔍 Save a screenshot to see what Playwright sees
+        page.screenshot(path="screenshot.png", full_page=True)
 
         try:
             title = page.locator("h1").first.inner_text()
@@ -22,4 +26,8 @@ def scrape_tiktok_sound(url: str):
             ugc_count = "UGC count not found"
 
         browser.close()
-        return {"title": title, "ugc_count": ugc_count}
+        return {
+            "title": title,
+            "ugc_count": ugc_count,
+            "screenshot_path": "screenshot.png"
+        }
