@@ -4,9 +4,10 @@ RAPIDAPI_KEY = st.secrets["RAPIDAPI_KEY"]
 BASE_URL = "https://scraptik.p.rapidapi.com"
 
 HEADERS = {
-    "X-RapidAPI-Key": RAPIDAPI_KEY,
+    "X-RapidAPI-Key": "813ec90f04msh60b85bd19042914p1d5c47jsnc3f5ecaea33a",
     "X-RapidAPI-Host": "scraptik.p.rapidapi.com"
 }
+
 
 def extract_sound_id(tiktok_url: str):
     if "music/" not in tiktok_url:
