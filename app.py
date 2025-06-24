@@ -1,6 +1,10 @@
 
+import os
+os.system("playwright install chromium")  # <-- This line forces install at runtime
+
 import streamlit as st
 from scraper import scrape_tiktok_sound
+
 
 st.set_page_config(page_title="TikTok Sound Scraper", layout="centered")
 
