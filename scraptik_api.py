@@ -9,7 +9,6 @@ HEADERS = {
 }
 
 def extract_sound_id(tiktok_url: str):
-    """Extract the sound ID from a TikTok sound URL"""
     if "music/" not in tiktok_url:
         return None
     try:
