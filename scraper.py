@@ -7,7 +7,8 @@ def scrape_tiktok_sound(url: str):
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
         )
         page = context.new_page()
-        page.goto(url, timeout=60000)
+        page.goto(url, wait_until="networkidle", timeout=60000)
+
 
         # Wait longer for full load
         page.wait_for_timeout(8000)
