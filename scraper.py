@@ -16,8 +16,24 @@ def scrape_tiktok_sound(url: str):
         # Wait longer for full load
         page.wait_for_timeout(8000)
 
-        # 🔍 Save a screenshot to see what Playwright sees
-        page.screenshot(path="screenshot.png", full_page=True, timeout=10000, animations="disabled")
+        # Force-disable web fonts + transitions before screenshot
+        page.evaluate("""
+        () => {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                * {
+                    font-display: block !important;
+                    animation: none !important;
+                    transition: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        """)
+        
+        # Take screenshot after disabling animations
+        page.screenshot(path="screenshot.png", full_page=True, timeout=10000)
+
 
 
         try:
