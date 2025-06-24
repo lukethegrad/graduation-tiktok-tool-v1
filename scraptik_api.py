@@ -1,6 +1,6 @@
 import requests
 import streamlit as st
-RAPIDAPI_KEY = "813ec90f04msh60b85bd19042914p1d5c47jsnc3f5ecaea33a"  # Replace with your actual key
+RAPIDAPI_KEY = st.secrets["RAPIDAPI_KEY"]
 BASE_URL = "https://scraptik.p.rapidapi.com"
 
 HEADERS = {
