@@ -18,5 +18,10 @@ if url:
             st.success("✅ Scrape complete!")
             st.write("**Sound Title:**", data["title"])
             st.write("**UGC Count:**", data["ugc_count"])
+
+            # 👇 Add this line to show the screenshot
+            st.image(data["screenshot_path"], caption="What the scraper sees")
+
         except Exception as e:
             st.error(f"❌ Failed to scrape: {e}")
+
