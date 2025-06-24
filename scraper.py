@@ -17,7 +17,8 @@ def scrape_tiktok_sound(url: str):
         page.wait_for_timeout(8000)
 
         # 🔍 Save a screenshot to see what Playwright sees
-        page.screenshot(path="screenshot.png", full_page=True)
+        page.screenshot(path="screenshot.png", full_page=True, timeout=10000, animations="disabled")
+
 
         try:
             title = page.locator("h1").first.inner_text()
