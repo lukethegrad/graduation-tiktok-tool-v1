@@ -5,7 +5,7 @@ BASE_URL = "https://scraptik.p.rapidapi.com"
 
 HEADERS = {
     "X-RapidAPI-Key": "813ec90f04msh60b85bd19042914p1d5c47jsnc3f5ecaea33a",
-    "X-RapidAPI-Host": "scraptik.p.rapidapi.com"
+    "X-RapidAPI-Host": "scraptik-scraptik-default.p.rapidapi.com"
 }
 
 
