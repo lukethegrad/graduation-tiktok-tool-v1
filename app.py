@@ -32,5 +32,4 @@ if url:
     else:
         st.error("Invalid TikTok sound link.")
 
-st.write("Extracted ID:", sound_id)
 
