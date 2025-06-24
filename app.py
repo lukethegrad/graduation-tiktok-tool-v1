@@ -1,3 +1,4 @@
+import streamlit as st
 from apify_scraper import run_tiktok_sound_scrape
 
 sound_url = st.text_input("Paste a TikTok sound URL:")
